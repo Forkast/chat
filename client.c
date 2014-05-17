@@ -21,7 +21,7 @@ void rkeyboard(int sockn)
 	memset((void*) &buffer, 0, MAX);
 	read(0, buffer, MAX - 1);
 	int a = write(sockn, buffer, strlen(buffer));
-	if (a < 0)
+	if (a < 0) 
 		error("ERROR writing to socket");
 }
 
