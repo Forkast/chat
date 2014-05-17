@@ -16,12 +16,11 @@ void error(const char *msg)
 }
 
 void rkeyboard(int sockn)
-{ 
+{
 	char buffer[MAX];
 	memset((void*) &buffer, 0, MAX);
 	read(0, buffer, MAX - 1);
 	int a = write(sockn, buffer, strlen(buffer));
-	//printf(" a = %d\n", a);
 	if (a < 0) 
 		error("ERROR writing to socket");
 }
@@ -40,7 +39,7 @@ void rreceived(int sockn)
 	if (a < 0)
 		error("ERROR reading from socket");
 	printf("\rOne:> %s", buffer);
-}	
+}
 
 int main(int argc, char *argv[])
 {
